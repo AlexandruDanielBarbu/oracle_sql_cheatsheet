@@ -4,7 +4,7 @@
 # Login
 
 ```sql
-connect SYS as SYSDBA
+SYS as SYSDBA
 ```
 ```sql
 CONNECT  stud1/student
@@ -47,7 +47,7 @@ CREATE TABLE departamente (
     data_infiintarii DATE DEFAULT SYSDATE,
 
     CONSTRAINT pk_departamente PRIMARY KEY (id_departament),
-    CONSTRAINT uq_denumire UNIQUE (denumire_departament),
+    CONSTRAINT uq_denumire UNIQUE (denumire_departament)
 );
 ```
 
@@ -76,7 +76,7 @@ INSERT INTO [table name]
 ```sql
 -- or
 INSERT INTO [table name]
-    VALUES(value_column1, value_column2, ...) -- for all columns in their order
+    VALUES(value_column1, value_column2, ...); -- for all columns in their order
 ```
 
 # Select Data from Table
@@ -84,7 +84,7 @@ INSERT INTO [table name]
 ```sql
 SELECT [* | [column_name1][, column_name2[,...]]]
     FROM  [table name]
-        [WHERE [conditions]]
+        [WHERE [conditions]];
 ```
 
 ## Example
@@ -94,7 +94,7 @@ SELECT * FROM angajati;
 
 SELECT nume, prenume, functie FROM angajati;
 
-SELECT nume, prenume, functie FROM angajati WHERE functie='Director'
+SELECT nume, prenume, functie FROM angajati WHERE functie='Director';
 ```
 
 # Modify data
@@ -102,7 +102,7 @@ SELECT nume, prenume, functie FROM angajati WHERE functie='Director'
 ```sql
 UPDATE [table name]
     SET [column_name1] = [new_value1] [, column_name2 = new_value2, [,...]]
-        [WHERE [conditions]]
+        [WHERE [conditions]];
 ```
 
 # Delete data
