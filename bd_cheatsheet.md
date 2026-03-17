@@ -12,7 +12,7 @@ CONNECT  stud1/student
 
 # Create a user
 ```sql
-connect SYS as SYSDBA
+SYS as SYSDBA
 ```
 ```sql
 CREATE USER [name] IDENTIFIED BY [name after /];
@@ -24,6 +24,15 @@ CREATE USER [name] IDENTIFIED BY [name after /];
 GRANT CREATE SESSION TO [username];
 GRANT RESOURCE TO [username];
 ALTER USER [username] QUOTA UNLIMITED ON USERS;
+```
+
+# Nice Table Format
+
+```sql
+set lines [number | 200];
+set pages [number | 200];
+
+SET VERIFY OFF
 ```
 
 # Create a table
@@ -109,4 +118,22 @@ UPDATE [table name]
 
 ```sql
 DELETE FROM [table name] [WHERE [conditions]];
+```
+
+# Placeholder values
+
+## Example
+```sql
+select nume, '&functie' functie, salariu
+    from angajati
+    where functie = &functie;
+```
+
+> [!WARNING]
+> The second `&functie` must have values entered in the CLI with ('). ('analyst')
+
+# Unset Variables
+
+```sql
+UNDEFINE [variable name]
 ```
